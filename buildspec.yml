@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.12
+    commands:
+      - echo "Python environment ready"
+
+  build:
+    commands:
+      - echo "Running Python Tests"
+      - python -m unittest -v test_app.py
+
+  post_build:
+    commands:
+      - echo "CI Process Completed"
+      
+artifacts:
+  files:
+    - app.py
+    - test_app.py

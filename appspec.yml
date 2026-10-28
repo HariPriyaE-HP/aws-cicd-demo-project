@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+
+files:
+  - source: app.py
+    destination: /home/ubuntu/python-app
+  - source: test_app.py
+    destination: /home/ubuntu/python-app
+
+hooks:
+  ValidateService:
+    - location: scripts/validate.sh
+      timeout: 60
+      runas: ubuntu
